@@ -1,0 +1,25 @@
+resources:
+  # Sample Go app in a GitRepo
+  - name: go_example
+    type: GitRepo
+    configuration:
+      path: myrepo/go-example
+      branches:
+        include: main
+      gitProvider: myGithub
+       
+  # Build info for the published Go module
+  - name: go_build_info_publish_module
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: myArtifactory
+      buildName: go_example_module_publish
+      buildNumber: 332
+       
+  # Build info for the published Go app
+  - name: go_build_info_publish
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: myArtifactory
+      buildName: go_example_build_publish
+      buildNumber: 1
